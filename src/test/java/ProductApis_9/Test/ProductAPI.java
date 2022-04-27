@@ -58,5 +58,9 @@ public class ProductAPI {
         base.AllLinkerWithFirstPreftrack();
     }
 
-    //
+    //Product Allocated to all linkers
+    @Test(priority = 7)
+    void Product_allocated_to_all_linkers(){
+        base.ProductAllocatedToAllLinkers();
+    }
 }

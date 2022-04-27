@@ -175,6 +175,29 @@ public class Base {
         }
     }
 
+    public void ProductAllocatedToAllLinkers(){
 
+        RestAssured.baseURI = prop.getProperty("URI");
+        RequestSpecification request = given();
+
+        Response response = request.request(Method.GET,"/product-allocated");
+
+        //print response in console window
+        String responseBody = response.getBody().asString();
+        System.out.println("Response Body is: " + responseBody);
+
+        //Status code validation
+        int statusCode = response.getStatusCode();
+        System.out.println("Status code is: " + statusCode);
+        Assert.assertEquals(statusCode,200);
+
+        JSONArray arr = new JSONArray(response.asString());
+        for (int i = 0; i < arr.length(); i++) {
+            JSONObject obj = arr.getJSONObject(i);
+            assert obj.get("name") instanceof String;
+            assert obj.get("islead") instanceof String;
+            assert obj.get("id") instanceof Integer;
+        }
+    }
 
 }
