@@ -64,4 +64,13 @@ public class GetTrack {
                 then().spec(responseSpecification).statusCode(200).log().status()
                 .extract().response();
     }
+    @Test(priority = 6)
+    public void Get_Parallel_Track() {
+        requestSpecification.given()
+                .when().
+                get("/parallel-track-pref").
+                then().spec(responseSpecification).statusCode(200).log().status()
+                .extract().response();
+
+    }
 }
