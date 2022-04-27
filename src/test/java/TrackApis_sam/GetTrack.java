@@ -56,4 +56,12 @@ public class GetTrack {
                 .extract().response();
 
     }
+    @Test(priority = 5)
+    public void Get_Perform_Track_Score() {
+        requestSpecification.given()
+                .when().
+                get("/perform-track-analysis-score-no").
+                then().spec(responseSpecification).statusCode(200).log().status()
+                .extract().response();
+    }
 }
