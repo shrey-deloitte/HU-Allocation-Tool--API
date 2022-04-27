@@ -36,14 +36,16 @@ public class UploadFiles {
 
     public UploadFiles(String url) {
         this.url = url;
+        RestAssured.baseURI="https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation";
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
         requestSpecBuilder.setBaseUri(url).addHeader("Content-Type", "multipart/json");
         requestSpecification = with().spec(requestSpecBuilder.build());
 
         ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
-        responseSpecBuilder.expectContentType(ContentType.JSON);
+        responseSpecBuilder.expectContentType(ContentType.JSON).expectStatusCode(200);
         responseSpecification = responseSpecBuilder.build();
     }
+
 
 
 
@@ -58,17 +60,18 @@ public void postDetailsOfAllProducts(){
 
             .multiPart("myfile",productDetailfile,"text/csv")
                     .when()
-            .post("https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/productdetail-upload")
+            .post("/productdetail-upload")
             .thenReturn();
 
     System.out.println(response.getStatusCode());
 
 }
+
     public void getAllProductsNames(){
         Response response = given()
-                .spec(requestSpecification)
+
                 .when()
-                .get("product-detail")
+                .get("/product-detail")
                 .then().spec(responseSpecification)
                 .extract().response();
 
@@ -83,7 +86,7 @@ public void postDetailsOfAllProducts(){
     }
 
 
-    @Test
+
 public void verifyProductDetails() throws IOException {
 
 

@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -73,6 +74,14 @@ public class testClass {
         uploadFiles.postDetailsOfAllProducts();
         uploadFiles.getAllProductsNames();
         uploadFiles.verifyProductDetails();
+    }
+    @AfterSuite
+    public void tearDown() throws InterruptedException {
+
+
+
+        extent.flush();
+
     }
 
 }
