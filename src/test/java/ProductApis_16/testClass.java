@@ -83,6 +83,11 @@ public class testClass {
         ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
         productsAllocated.ProductAllocatedBasedOnRatings();
     }
+    @Test(priority = 9)
+    public void ProductAllocatedBasedOnOnlyRating(){
+        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+        productsAllocated.ProductAllocatedBasedOnOnlyRatings();
+    }
     @AfterSuite
     public void tearDown() throws InterruptedException {
         extent.flush();

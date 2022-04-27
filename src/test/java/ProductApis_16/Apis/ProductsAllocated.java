@@ -54,4 +54,17 @@ public class ProductsAllocated {
         JSONObject object = new JSONObject(response.asString());
         assert (object.get("message").equals("Done"));
     }
+    public void ProductAllocatedBasedOnOnlyRatings(){
+
+        Response response = given()
+                .spec(requestSpecification)
+                .when()
+                .get("/perform-product-analysis-only-rate")
+                .then()
+                .spec(responseSpecification)
+                .extract().response();
+
+        JSONObject object = new JSONObject(response.asString());
+        assert (object.get("message").equals("Done"));
+    }
 }
