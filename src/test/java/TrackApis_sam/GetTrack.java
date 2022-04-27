@@ -29,6 +29,14 @@ public class GetTrack {
                 then().spec(responseSpecification).statusCode(200).log().status()
                 .extract().response();
     }
+    @Test(priority = 2)
+    public void Get_Track_Email() {
+        requestSpecification.given()
+                .when().
+                get("/track-allocated/email/jtrembath1i").
+                then().spec(responseSpecification).statusCode(200).log().status()
+                .extract().response();
 
+    }
 
 }
