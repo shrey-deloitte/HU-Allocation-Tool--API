@@ -2,17 +2,12 @@ package ProductApis_9.Pages;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
@@ -30,7 +25,7 @@ public class Base {
         }
     }
 
-    public void sectionLeadRemarks() throws IOException {
+    public void sectionLeadRemarks() {
 
         //specify Base URI
         RestAssured.baseURI = prop.getProperty("URI");
@@ -55,18 +50,15 @@ public class Base {
             JSONObject obj = arr.getJSONObject(i);
             assert obj.get("effort") instanceof Integer;
         }
+
     }
 
 
-    public void section_Lead_remarks_byEmail() throws IOException {
+    public void section_Lead_remarks_byEmail(){
 
-        //specify Base URI
         RestAssured.baseURI = prop.getProperty("URI");
-
-        //Request object
         RequestSpecification request = given();
 
-        //Response object
         Response response = request.request(Method.GET,"/section-lead-remarks/"+prop.getProperty("email"));
 
         //print response in console window
@@ -81,17 +73,14 @@ public class Base {
         JSONObject obj = new JSONObject(response.asString());
         assert obj.get("effort") instanceof Integer;
         Assert.assertEquals(obj.get("email"),prop.getProperty("email"));
+
     }
 
     public void PreferenceOfLinkerByEmail(){
 
-        //specify Base URI
         RestAssured.baseURI = prop.getProperty("URI");
-
-        //Request object
         RequestSpecification request = given();
 
-        //Response object
         Response response = request.request(Method.GET,"/product-pref/email/"+prop.getProperty("email"));
 
         //print response in console window
@@ -106,17 +95,14 @@ public class Base {
         JSONObject obj = new JSONObject(response.asString());
         assert obj.get("email") instanceof String;
         Assert.assertEquals(obj.get("email"),prop.getProperty("email"));
+
     }
 
     public void SingleProductByName() {
 
-        //specify Base URI
         RestAssured.baseURI = prop.getProperty("URI");
-
-        //Request object
         RequestSpecification request = given();
 
-        //Response object
         Response response = request.request(Method.GET,"/product-detail/name/"+prop.getProperty("name"));
 
         //print response in console window
@@ -131,6 +117,7 @@ public class Base {
         JSONObject obj = new JSONObject(response.asString());
         assert obj.get("name") instanceof String;
         Assert.assertEquals(obj.get("name"),prop.getProperty("name"));
+
     }
 
     public void ProductDetailById(){
@@ -153,6 +140,7 @@ public class Base {
         JSONObject obj = new JSONObject(response.asString());
         assert obj.get("name") instanceof String;
         Assert.assertEquals(obj.getInt("id"),ID);
+
     }
 
     public void AllLinkerWithFirstPreftrack(){
@@ -177,6 +165,7 @@ public class Base {
             assert obj.get("email") instanceof String;
             Assert.assertEquals(obj.get("preference_1"), prop.getProperty("1_preference"));
         }
+
     }
 
     public void ProductAllocatedToAllLinkers(){
@@ -202,6 +191,7 @@ public class Base {
             assert obj.get("islead") instanceof String;
             assert obj.get("id") instanceof Integer;
         }
+
     }
 
     public void ProductAllocatedToLinkerByEmail(){
@@ -228,6 +218,6 @@ public class Base {
             assert obj.get("id") instanceof Integer;
         }
 //        Assert.assertEquals(arr.get(0),prop.getProperty("email"));
-    }
 
+    }
 }
