@@ -75,6 +75,7 @@ public class testClass {
     @Test(priority = 7)
     public void ProductAllocatedBasedOnScore(){
         ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+
         productsAllocated.ProductAllocatedBasedOnScore();
     }
     @Test(priority = 8)
