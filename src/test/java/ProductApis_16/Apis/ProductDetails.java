@@ -33,7 +33,7 @@ public class ProductDetails {
         this.url = url;
 
         RestAssured.baseURI="https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation";
-        System.out.println("inside cons of producct details");
+
 
             RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
             requestSpecBuilder.setBaseUri(url).addHeader("Content-Type", "application/json");

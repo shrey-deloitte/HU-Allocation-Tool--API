@@ -4,6 +4,7 @@ package ProductApis_16;
 import ProductApis_16.Apis.GetLinkersByProduct;
 import ProductApis_16.Apis.ProductDetails;
 
+import ProductApis_16.Apis.ProductsAllocated;
 import ProductApis_16.Apis.UploadFiles;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -71,11 +72,18 @@ public class testClass {
         uploadFiles.getAllProductsNames();
         uploadFiles.verifyProductDetails();
     }
+    @Test(priority = 7)
+    public void ProductAllocatedBasedOnScore(){
+        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+        productsAllocated.ProductAllocatedBasedOnScore();
+    }
+    @Test(priority = 8)
+    public void ProductAllocatedBasedOnRating(){
+        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+        productsAllocated.ProductAllocatedBasedOnRatings();
+    }
     @AfterSuite
     public void tearDown() throws InterruptedException {
-
-
-
         extent.flush();
 
     }
