@@ -151,6 +151,30 @@ public class Base {
         Assert.assertEquals(obj.getInt("id"),ID);
     }
 
-    public void
+    public void AllLinkerWithFirstPreftrack(){
+
+        RestAssured.baseURI = prop.getProperty("URI");
+        RequestSpecification request = given();
+
+        Response response = request.request(Method.GET,"/product-pref/preference/"+prop.getProperty("1_preference"));
+
+        //print response in console window
+        String responseBody = response.getBody().asString();
+        System.out.println("Response Body is: " + responseBody);
+
+        //Status code validation
+        int statusCode = response.getStatusCode();
+        System.out.println("Status code is: " + statusCode);
+        Assert.assertEquals(statusCode,200);
+
+        JSONArray arr = new JSONArray(response.asString());
+        for (int i = 0; i < arr.length(); i++) {
+            JSONObject obj = arr.getJSONObject(i);
+            assert obj.get("email") instanceof String;
+            Assert.assertEquals(obj.get("preference_1"), prop.getProperty("1_preference"));
+        }
+    }
+
+
 
 }

@@ -51,4 +51,12 @@ public class ProductAPI {
     void Product_details_by_id(){
         base.ProductDetailById();
     }
+
+    //All the linkers with a particular track as first preference
+    @Test(priority = 6)
+    void All_linkers_with_first_pref_Track(){
+        base.AllLinkerWithFirstPreftrack();
+    }
+
+    //
 }
