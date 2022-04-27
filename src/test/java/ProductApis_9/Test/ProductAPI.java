@@ -63,4 +63,10 @@ public class ProductAPI {
     void Product_allocated_to_all_linkers(){
         base.ProductAllocatedToAllLinkers();
     }
+
+    //Product allocated to a linker by email
+    @Test(priority = 8)
+    void Product_allocated_to_linker_byEmail(){
+        base.ProductAllocatedToLinkerByEmail();
+    }
 }
