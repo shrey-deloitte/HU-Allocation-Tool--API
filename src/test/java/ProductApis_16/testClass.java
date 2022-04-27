@@ -2,6 +2,7 @@ package ProductApis_16;
 
 
 import ProductApis_16.Apis.AdminLogin;
+import ProductApis_16.Apis.GetLinkersByProduct;
 import ProductApis_16.Apis.ProductDetails;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -36,6 +37,11 @@ public class testClass {
         ProductDetails productDetails =new ProductDetails(baseClass.baseUrl);
         productDetails.getAllProductDetail();
 
+    }
+    @Test(priority = 2)
+    public void getLinkersNameByprod(){
+        GetLinkersByProduct getLinkersByProduct = new GetLinkersByProduct(baseClass.baseUrl);
+        getLinkersByProduct.getLinkersByProduct();
     }
 
 }

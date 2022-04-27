@@ -27,13 +27,13 @@ public class ProductDetails {
     public ProductDetails(String url) {
         this.url = url;
 
-        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
-        requestSpecBuilder.setBaseUri(url).addHeader("Content-Type", "application/json");
-        requestSpecification = with().spec(requestSpecBuilder.build());
+            RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+            requestSpecBuilder.setBaseUri(url).addHeader("Content-Type", "application/json");
+            requestSpecification = with().spec(requestSpecBuilder.build());
 
-        ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
-        responseSpecBuilder.expectContentType(ContentType.JSON);
-        responseSpecification = responseSpecBuilder.build();
+            ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
+            responseSpecBuilder.expectContentType(ContentType.JSON);
+            responseSpecification = responseSpecBuilder.build();
     }
 
     public void getAllProductDetail() {
