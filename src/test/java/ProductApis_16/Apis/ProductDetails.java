@@ -9,6 +9,8 @@ import io.restassured.specification.ResponseSpecification;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -57,6 +59,17 @@ public class ProductDetails {
         for (String str : productsName) {
             System.out.println(str);
         }
+    }
+    public void postProductDetails(){
+        File jsonData = new File("C:\\Users\\shubhamkumar32\\IdeaProjects\\HU-Allocation-Tool--API\\src\\test\\java\\resources\\productDetails.json");
+        Response response =given().spec(requestSpecification).when().post("/product-detail").then()
+                //.spec(responseSpecification)
+                .extract().response();
+
+        System.out.println(response.getStatusCode());
+        assert (response.getStatusCode() == 200);
+        JSONObject object = new JSONObject(response.asString());
+        //assert (object.get("name").equals("newproduct") && object.get("description").equals("Wow! amazing Product"));
     }
 
 }
