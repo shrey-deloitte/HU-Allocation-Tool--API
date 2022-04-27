@@ -29,7 +29,8 @@ public class ProductsAllocated {
         responseSpecBuilder.expectContentType(ContentType.JSON).expectStatusCode(200);
         responseSpecification = responseSpecBuilder.build();
     }
-    public void ProductAllocatedBasedOnScore(){
+
+    public void ProductAllocatedBasedOnScore() {
         Response response = given()
                 .spec(requestSpecification)
                 .when()
@@ -41,7 +42,8 @@ public class ProductsAllocated {
         JSONObject object = new JSONObject(response.asString());
         assert (object.get("message").equals("Done"));
     }
-    public void ProductAllocatedBasedOnRatings(){
+
+    public void ProductAllocatedBasedOnRatings() {
 
         Response response = given()
                 .spec(requestSpecification)
@@ -54,7 +56,8 @@ public class ProductsAllocated {
         JSONObject object = new JSONObject(response.asString());
         assert (object.get("message").equals("Done"));
     }
-    public void ProductAllocatedBasedOnOnlyRatings(){
+
+    public void ProductAllocatedBasedOnOnlyRatings() {
 
         Response response = given()
                 .spec(requestSpecification)

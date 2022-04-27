@@ -24,7 +24,7 @@ public class GetLinkersByProduct {
 
     List<String> linkersName = new ArrayList<String>();
 
-    public GetLinkersByProduct( String url) {
+    public GetLinkersByProduct(String url) {
         this.url = url;
 
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
@@ -36,8 +36,8 @@ public class GetLinkersByProduct {
         responseSpecification = responseSpecBuilder.build();
     }
 
-    public void getLinkersByProduct(){
-        Response response =given()
+    public void getLinkersByProduct() {
+        Response response = given()
                 .spec(requestSpecification)
                 .when()
                 .get("product-allocated/product/GHOUSE")
@@ -51,10 +51,10 @@ public class GetLinkersByProduct {
         for (int i = 0; i < arr.length(); i++) {
             JSONObject obj = arr.getJSONObject(i);
             linkersName.add(obj.get("name").toString());
-            assert (obj.has("name") && obj.get("name") instanceof String && ((String) obj.get("name")).length()>0);
-            assert (obj.has("id") &&obj.get("id") instanceof Integer);
-            assert (obj.has("product") &&obj.get("product") instanceof String && (((String) obj.get("product")).length() > 0));
-            assert (obj.has("islead") &&obj.get("islead") instanceof String && (obj.get("islead").equals("Yes") || obj.get("islead").equals("No")));
+            assert (obj.has("name") && obj.get("name") instanceof String && ((String) obj.get("name")).length() > 0);
+            assert (obj.has("id") && obj.get("id") instanceof Integer);
+            assert (obj.has("product") && obj.get("product") instanceof String && (((String) obj.get("product")).length() > 0));
+            assert (obj.has("islead") && obj.get("islead") instanceof String && (obj.get("islead").equals("Yes") || obj.get("islead").equals("No")));
         }
         for (String str : linkersName) {
             System.out.println(str);

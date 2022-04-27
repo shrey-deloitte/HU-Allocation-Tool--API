@@ -54,40 +54,47 @@ public class testClass {
         GetLinkersByProduct getLinkersByProduct = new GetLinkersByProduct(baseClass.baseUrl);
         getLinkersByProduct.getLinkersByProduct();
     }
+
     @Test(priority = 4)
     public void postDetailsOfAllProduct() {
-        UploadFiles uploadFiles =new UploadFiles(baseClass.baseUrl);
+        UploadFiles uploadFiles = new UploadFiles(baseClass.baseUrl);
         uploadFiles.postDetailsOfAllProducts();
 
     }
+
     @Test(priority = 5)
-    public void getAllProductsName(){
-        UploadFiles uploadFiles =new UploadFiles(baseClass.baseUrl);
+    public void getAllProductsName() {
+        UploadFiles uploadFiles = new UploadFiles(baseClass.baseUrl);
         uploadFiles.getAllProductsNames();
     }
+
     @Test(priority = 6)
     public void verifyProductDetail() throws IOException {
-        UploadFiles uploadFiles =new UploadFiles(baseClass.baseUrl);
+        UploadFiles uploadFiles = new UploadFiles(baseClass.baseUrl);
         uploadFiles.postDetailsOfAllProducts();
         uploadFiles.getAllProductsNames();
         uploadFiles.verifyProductDetails();
     }
+
     @Test(priority = 7)
-    public void ProductAllocatedBasedOnScore(){
-        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+    public void ProductAllocatedBasedOnScore() {
+        ProductsAllocated productsAllocated = new ProductsAllocated(baseClass.baseUrl);
 
         productsAllocated.ProductAllocatedBasedOnScore();
     }
+
     @Test(priority = 8)
-    public void ProductAllocatedBasedOnRating(){
-        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+    public void ProductAllocatedBasedOnRating() {
+        ProductsAllocated productsAllocated = new ProductsAllocated(baseClass.baseUrl);
         productsAllocated.ProductAllocatedBasedOnRatings();
     }
+
     @Test(priority = 9)
-    public void ProductAllocatedBasedOnOnlyRating(){
-        ProductsAllocated productsAllocated =new ProductsAllocated(baseClass.baseUrl);
+    public void ProductAllocatedBasedOnOnlyRating() {
+        ProductsAllocated productsAllocated = new ProductsAllocated(baseClass.baseUrl);
         productsAllocated.ProductAllocatedBasedOnOnlyRatings();
     }
+
     @AfterSuite
     public void tearDown() throws InterruptedException {
         extent.flush();

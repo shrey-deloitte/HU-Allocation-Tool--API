@@ -28,15 +28,15 @@ public class UploadFiles {
 
     public String url;
 
-    File productPreference= new File("C:\\Users\\shubhamkumar32\\Downloads\\productpref (1).csv");
+    File productPreference = new File("C:\\Users\\shubhamkumar32\\Downloads\\productpref (1).csv");
     private RequestSpecification requestSpecification;
     private ResponseSpecification responseSpecification;
-    List<String>productsNames=new ArrayList<String>();
+    List<String> productsNames = new ArrayList<String>();
     String addedProductNames;
 
     public UploadFiles(String url) {
         this.url = url;
-        RestAssured.baseURI="https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation";
+        RestAssured.baseURI = "https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation";
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
         requestSpecBuilder.setBaseUri(url).addHeader("Content-Type", "multipart/json");
         requestSpecification = with().spec(requestSpecBuilder.build());
@@ -47,27 +47,23 @@ public class UploadFiles {
     }
 
 
-
-
-
-
-public void postDetailsOfAllProducts(){
+    public void postDetailsOfAllProducts() {
 
         File productDetailfile = new File("C:\\Users\\shubhamkumar32\\Downloads\\productdetail (1).csv");
 
-    Response response =
-            given()
+        Response response =
+                given()
 
-            .multiPart("myfile",productDetailfile,"text/csv")
-                    .when()
-            .post("/productdetail-upload")
-            .thenReturn();
+                        .multiPart("myfile", productDetailfile, "text/csv")
+                        .when()
+                        .post("/productdetail-upload")
+                        .thenReturn();
 
-    System.out.println(response.getStatusCode());
+        System.out.println(response.getStatusCode());
 
-}
+    }
 
-    public void getAllProductsNames(){
+    public void getAllProductsNames() {
         Response response = given()
 
                 .when()
@@ -79,35 +75,34 @@ public void postDetailsOfAllProducts(){
         for (int i = 0; i < arr.length(); i++) {
             JSONObject obj = arr.getJSONObject(i);
             productsNames.add(obj.get("name").toString());
-            assert (obj.has("name") && obj.get("name") instanceof String && ((String) obj.get("name")).length()>0);
-            assert (obj.has("id") &&obj.get("id") instanceof Integer);
+            assert (obj.has("name") && obj.get("name") instanceof String && ((String) obj.get("name")).length() > 0);
+            assert (obj.has("id") && obj.get("id") instanceof Integer);
             System.out.println(obj.get("name"));
         }
     }
 
 
+    public void verifyProductDetails() throws IOException {
 
-public void verifyProductDetails() throws IOException {
 
-
-        String file="C:\\Users\\shubhamkumar32\\Downloads\\productdetail (1).csv";
+        String file = "C:\\Users\\shubhamkumar32\\Downloads\\productdetail (1).csv";
 
         BufferedReader reader = null;
-        int i=0;
-        String line= "";
-        try{
+        int i = 0;
+        String line = "";
+        try {
             reader = new BufferedReader(new FileReader(file));
-            while ((line=reader.readLine())!=null){
+            while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
-               if(i>0){
-                  if(productsNames.contains(row[0])){
-                      Assert.assertTrue(true);
-                  }else{
-                      Assert.assertTrue(false);
-                  }
-               }
+                if (i > 0) {
+                    if (productsNames.contains(row[0])) {
+                        Assert.assertTrue(true);
+                    } else {
+                        Assert.assertTrue(false);
+                    }
+                }
 
-                for(String index:row){
+                for (String index : row) {
                     //System.out.println(index);
                 }
                 System.out.println();
@@ -115,13 +110,12 @@ public void verifyProductDetails() throws IOException {
 
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
-        }finally {
+        } finally {
 
         }
 
 
-
-}
+    }
 }
