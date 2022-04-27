@@ -22,23 +22,33 @@ public class ProductAPI {
     public static String baseURI = "https://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation";
     public Base base = new Base();
 
+    //All Section Lead Remarks
     @Test(priority = 1)
     void all_section_lead_remarks() throws IOException {
         base.sectionLeadRemarks();
+    }
 
-//            Response response = given().spec(request).
-//                    get("/section-lead-remarks").then().spec(resSpec).extract().response();
-//        int statusCode = response.getStatusCode();
-//
-//        Assert.assertEquals(statusCode,200);
-//
-//            JSONArray jsonArray = new JSONArray(response.asString());
-//            System.out.println(jsonArray.length());
-        }
-
-        //Section Lead Remarks by E-mail
+    //Section Lead Remarks by E-mail
     @Test(priority = 2)
     void SectionLeadRemarks_byEmail() throws IOException{
         base.section_Lead_remarks_byEmail();
     }
+
+    //Preference of linker by Email
+    @Test(priority = 3)
+    void Preferences_of_linker_by_email() {
+        base.PreferenceOfLinkerByEmail();
     }
+
+    //Single product detail by Name
+    @Test(priority = 4)
+    void Single_product_by_name(){
+        base.SingleProductByName();
+    }
+
+    //Product details by ID
+    @Test(priority = 5)
+    void Product_details_by_id(){
+        base.ProductDetailById();
+    }
+}
