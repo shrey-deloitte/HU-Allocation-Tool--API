@@ -1,7 +1,6 @@
 package ProductApis_16;
 
 
-import ProductApis_16.Apis.AdminLogin;
 import ProductApis_16.Apis.GetLinkersByProduct;
 import ProductApis_16.Apis.ProductDetails;
 
@@ -9,13 +8,10 @@ import ProductApis_16.Apis.UploadFiles;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
