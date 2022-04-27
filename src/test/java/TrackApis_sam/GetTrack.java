@@ -38,5 +38,13 @@ public class GetTrack {
                 .extract().response();
 
     }
+    @Test(priority = 3)
+    public void Get_Perform_Track_YES() {
+        requestSpecification.given()
+                .when().
+                get("/perform-track-analysis-rate-yes").
+                then().spec(responseSpecification).statusCode(200).log().status()
+                .extract().response();
 
+    }
 }
