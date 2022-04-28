@@ -16,6 +16,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class GetTrack {
+    //Properties file
     public static Properties prop;
     static {
         try{
@@ -41,12 +42,14 @@ public class GetTrack {
     }
 
     @Test(priority = 1)
+    // Track Allocated
     public void Get_Track_Allocated() {
        Response response = requestSpecification.given()
                 .when().
                 get("/track-allocated").
                 then().spec(responseSpecification).statusCode(200).log().status()
                 .extract().response();
+
         JSONArray arr = new JSONArray(response.asString());
         for (int i = 0; i < arr.length(); i++) {
             JSONObject obj = arr.getJSONObject(i);
@@ -54,6 +57,7 @@ public class GetTrack {
         }
 
     }
+    // Track email
     @Test(priority = 2)
     public void Get_Track_Email() {
        Response response =  requestSpecification.given()
@@ -61,6 +65,7 @@ public class GetTrack {
                 get("/track-allocated/email/" + prop.getProperty("email")).
                 then().spec(responseSpecification).statusCode(200).log().status()
                 .extract().response();
+
         System.out.println(response.getStatusCode());
         ResponseBody body = response.getBody();
         System.out.println(body.asString());
@@ -72,6 +77,7 @@ public class GetTrack {
         }
 
     }
+    //perform-track-analysis-rate-yes
     @Test(priority = 3)
     public void Get_Perform_Track_YES() {
        Response response= requestSpecification.given()
@@ -84,6 +90,7 @@ public class GetTrack {
         Assert.assertEquals(obj.get("message"),"Done");
 
     }
+    //perform-track-analysis-rate-no
     @Test(priority = 4)
     public void Get_Perform_Track_NO() {
         Response response = requestSpecification.given()
@@ -95,6 +102,7 @@ public class GetTrack {
         assert obj.get("message") instanceof String;
         Assert.assertEquals(obj.get("message"),"Done");
     }
+    //perform-track-analysis-score-no
     @Test(priority = 5)
     public void Get_Perform_Track_Score() {
       Response response=   requestSpecification.given()
@@ -107,6 +115,7 @@ public class GetTrack {
         Assert.assertEquals(obj.get("message"),"Done");
 
     }
+    //parallel-track-pref
     @Test(priority = 6)
     public void Get_Parallel_Track() {
         Response response = requestSpecification.given()
