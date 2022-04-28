@@ -1,0 +1,5 @@
+2022-36-26 13:36:29.184 [main] INFO  extentController - notificationcheck start
+2022-36-26 13:36:29.762 [main] INFO  extentController - Getting users data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/notification
+2022-36-26 13:36:31.075 [main] DEBUG extentController - Request Failed
+2022-36-26 13:36:31.075 [main] DEBUG extentController - Fetched data
+2022-36-26 13:36:31.076 [main] INFO  extentController - notificationcheck success

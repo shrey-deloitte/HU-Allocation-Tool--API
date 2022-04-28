@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" parallel="tests" thread-count="5" >
+    <test name="launch"   >
+        <classes>
+            <class name="UserApis.user"/>
+
+        </classes>
+    </test>
+
+    <test name="Track Apis"   >
+        <classes>
+            <class name="TestClass"/>
+
+        </classes>
+    </test>
+    <test name="Product Apis_9"   >
+        <classes>
+            <class name="ProductApis_9.Test.ProductAPI"/>
+
+        </classes>
+    </test>
+    <test name="Product Apis_16"   >
+        <classes>
+            <class name="ProductApis_16.testClass"/>
+
+        </classes>
+    </test>
+    <test name="Track Apis_sam"   >
+        <classes>
+            <class name="TrackApis_sam.GetTrack"/>
+
+        </classes>
+    </test>
+
+</suite>
