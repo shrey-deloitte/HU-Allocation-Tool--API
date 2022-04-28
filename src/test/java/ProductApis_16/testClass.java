@@ -72,6 +72,7 @@ public class testClass {
     public void verifyProductDetail() throws IOException, InterruptedException {
         UploadFiles uploadFiles = new UploadFiles(baseClass.baseUrl);
         uploadFiles.postDetailsOfAllProducts();
+        Thread.sleep(1000);
         uploadFiles.getAllProductsNames();
         Thread.sleep(1000);
         uploadFiles.verifyProductDetails();
