@@ -20,7 +20,7 @@ public class user {
 
 
   //login test
-  @Test
+  @Test(priority = 1)
   public  void login() throws IOException {
 
     given().
@@ -35,7 +35,7 @@ public class user {
 
 
   //Get tha data of all the linkers
-  @Test
+  @Test(priority = 2)
   public void getLinkerData(){
     given().
             baseUri(baseUri).
@@ -52,7 +52,7 @@ public class user {
   }
 
   //Test to get the data of the linker by email
-  @Test
+  @Test(priority = 3)
   public void getLinkerDataByEmail(){
    try {
      String userEmail="edorkins68";
@@ -74,7 +74,7 @@ public class user {
     //needs to change the data everytime
 
 
-   @Test
+   @Test(priority = 4)
   public void PostLinkersData(){
 
       try {
@@ -94,7 +94,7 @@ public class user {
 
 
 //logout
-   @Test
+   @Test(priority = 5)
     public void logout(){
 
        given()

@@ -13,6 +13,6 @@ public class extentController {
         log = LogManager.getLogger(extentController.class.getName());
         extent = new ExtentReports();
         extent.attachReporter(new ExtentHtmlReporter("extent.html"));
-        test = extent.createTest("Main Assignment", "Test Description");
+//        test = extent.createTest("Main Assignment", "Test Description");
     }
 }

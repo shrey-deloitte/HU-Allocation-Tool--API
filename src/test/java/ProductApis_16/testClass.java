@@ -23,21 +23,21 @@ public class testClass {
     ExtentReports extent;
 
 
-    @BeforeSuite
-    public void setExtents() {
-
-        // start reporters
-        htmlReporter = new ExtentHtmlReporter("extent.html");
-
-        // create ExtentReports and attach reporter(s)
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
-    }
+//    @BeforeSuite
+//    public void setExtents() {
+//
+//        // start reporters
+//        htmlReporter = new ExtentHtmlReporter("extent.html");
+//
+//        // create ExtentReports and attach reporter(s)
+//        extent = new ExtentReports();
+//        extent.attachReporter(htmlReporter);
+//    }
 
     @Test(priority = 1)
     public void getProductDetails() throws IOException {
 
-        ExtentTest test = extent.createTest("get Product Detail", "Fetch all Product Details");
+       // ExtentTest test = extent.createTest("get Product Detail", "Fetch all Product Details");
         ProductDetails productDetails = new ProductDetails(baseClass.baseUrl);
         productDetails.getAllProductDetail();
 
@@ -95,10 +95,10 @@ public class testClass {
         productsAllocated.ProductAllocatedBasedOnOnlyRatings();
     }
 
-    @AfterSuite
-    public void tearDown() throws InterruptedException {
-        extent.flush();
-
-    }
+//    @AfterSuite
+//    public void tearDown() throws InterruptedException {
+//        extent.flush();
+//
+//    }
 
 }

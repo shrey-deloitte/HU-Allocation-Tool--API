@@ -69,6 +69,7 @@ public class ProductDetails {
     }
 
 
+
     public void postProductDetails() {
         File jsonData = new File("C:\\Users\\shubhamkumar32\\IdeaProjects\\HU-Allocation-Tool--API\\src\\test\\java\\resources\\productDetails.json");
 
