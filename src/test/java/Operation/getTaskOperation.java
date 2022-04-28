@@ -11,6 +11,7 @@ import io.restassured.specification.ResponseSpecification;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -72,11 +73,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode()==200);
             System.out.println(response.asString());
             log.debug(response.asString());
             log.info("Fetched data");
@@ -97,11 +99,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode()==200);
             JSONArray ja = new JSONArray(response.asString());
             JSONObject jo=ja.getJSONObject(0);
             TrackResJSON=ja.getJSONObject(ja.length()-1);
@@ -127,11 +130,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
             System.out.println(response);
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode()==200);
             System.out.println(response.asString());
             log.info(response.asString());
             test.info(response.asString());
@@ -153,11 +157,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode()==200);
             JSONArray ja = new JSONArray(response.asString());
             JSONObject jo=ja.getJSONObject(0);
             TrackAllocationJSON=ja.getJSONObject(ja.length()-1);
@@ -183,11 +188,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode() ==200);
             System.out.println(response.asString());
             log.info(response.asString());
             test.info(response.asString());
@@ -211,12 +217,13 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
 
+            assert (response.getStatusCode() ==200);
             System.out.println(response.asString());
             log.info(response.asString());
             test.info(response.asString());
@@ -239,11 +246,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode() ==200);
 
             System.out.println(response.asString());
             log.info(response.asString());
@@ -266,11 +274,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode() ==200);
 
             System.out.println(response.asString());
             log.info(response.asString());
@@ -293,11 +302,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode() ==200);
 
             System.out.println(response.asString());
             log.info(response.asString());
@@ -320,11 +330,12 @@ public class getTaskOperation {
                     .when().get().then().spec(responseSpecification)
                     .extract().response();
 
-            if(response.getStatusCode()!=200){
-                log.debug("Failed to Fetch data");
-                test.fail("Request Failed");
-                return false;
-            }
+//            if(response.getStatusCode()!=200){
+//                log.debug("Failed to Fetch data");
+//                test.fail("Request Failed");
+//                return false;
+//            }
+            assert (response.getStatusCode() ==200);
 
             System.out.println(response.asString());
             log.info(response.asString());

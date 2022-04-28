@@ -28,7 +28,7 @@ public class Listener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         test.fail(result.getMethod().getMethodName() + " test Fail");
         test = extentController.extent.createTest(result.getMethod().getMethodName(), "Test Description");
-        test.log(Status.INFO, result.getMethod().getMethodName() + " Failed");
+        test.fail( result.getMethod().getMethodName() + " Failed");
 
         ITestListener.super.onTestFailure(result);
     }

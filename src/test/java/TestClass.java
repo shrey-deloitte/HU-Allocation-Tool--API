@@ -14,6 +14,7 @@ public class TestClass {
     ExtentReports extent = extentController.extent;
     @Test (priority = 1)
     void notificationcheck() {
+
         ExtentTest regUserTest = extent.createTest("CHECKING NOTIFICATION");
         getTaskOperation op = new getTaskOperation(extentController.baseUrl+"/notification",  regUserTest,extentController.log);
         assert (op.checknotify()==true);

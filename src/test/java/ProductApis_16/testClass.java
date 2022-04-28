@@ -69,10 +69,11 @@ public class testClass {
     }
 
     @Test(priority = 6)
-    public void verifyProductDetail() throws IOException {
+    public void verifyProductDetail() throws IOException, InterruptedException {
         UploadFiles uploadFiles = new UploadFiles(baseClass.baseUrl);
         uploadFiles.postDetailsOfAllProducts();
         uploadFiles.getAllProductsNames();
+        Thread.sleep(1000);
         uploadFiles.verifyProductDetails();
     }
 

@@ -68,7 +68,7 @@ public class UploadFiles {
 
                 .when()
                 .get("/product-detail")
-                .then().spec(responseSpecification)
+                .then()//.spec(responseSpecification)
                 .extract().response();
 
         JSONArray arr = new JSONArray(response.asString());
