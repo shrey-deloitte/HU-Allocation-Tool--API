@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Apr 28, 2022 12:24:43 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='86.667%'><span class='strong'>13</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='13.333%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='39.394%'><span class='strong'>26</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='3.03%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='57.576%'>38</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Main Assignment</span>
+						<span class='test-time'>Apr 28, 2022 12:24:43 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:43 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:59 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+877ms</span>
+</div>
+	<div class='test-desc'>Test Description </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:43 AM</td>
+					<td class='step-details'>notificationcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:45 AM</td>
+					<td class='step-details'>notificationcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:45 AM</td>
+					<td class='step-details'>getTrackResAllcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:46 AM</td>
+					<td class='step-details'>getTrackResAllcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:46 AM</td>
+					<td class='step-details'>getTrackResEmailcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:47 AM</td>
+					<td class='step-details'>getTrackResEmailcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:47 AM</td>
+					<td class='step-details'>getTrackAllocationAllcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:48 AM</td>
+					<td class='step-details'>getTrackAllocationAllcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:48 AM</td>
+					<td class='step-details'>getTrackAllocationEmailcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:50 AM</td>
+					<td class='step-details'>getTrackAllocationEmailcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:50 AM</td>
+					<td class='step-details'>getInOneTrackAllcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>getInOneTrackAllcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>postParallelTrackPrefcheck start</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>postParallelTrackPrefcheck test Fail</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>postSectionLeadRemarkcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>postSectionLeadRemarkcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>postTrackResultcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>postTrackResultcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>postParallelTrackcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:53 AM</td>
+					<td class='step-details'>postParallelTrackcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:53 AM</td>
+					<td class='step-details'>getRatingBasedAllocationcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:54 AM</td>
+					<td class='step-details'>getRatingBasedAllocationcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:54 AM</td>
+					<td class='step-details'>getRatingAndEffortBasedAllocationcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:55 AM</td>
+					<td class='step-details'>getRatingAndEffortBasedAllocationcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:55 AM</td>
+					<td class='step-details'>getOnlyRatingAndEffortBasedAllocationcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:58 AM</td>
+					<td class='step-details'>getOnlyRatingAndEffortBasedAllocationcheck success</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:58 AM</td>
+					<td class='step-details'>getOnlyRatingBasedAllocationcheck start</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:59 AM</td>
+					<td class='step-details'>getOnlyRatingBasedAllocationcheck success</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>CHECKING NOTIFICATION</span>
+						<span class='test-time'>Apr 28, 2022 12:24:43 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:43 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:45 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+642ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:43 AM</td>
+					<td class='step-details'>Getting users data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/notification</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:45 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>17. Get track results of all linkers</span>
+						<span class='test-time'>Apr 28, 2022 12:24:45 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:45 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:46 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+235ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:45 AM</td>
+					<td class='step-details'>Get track results of all linkers data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/track-result</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:46 AM</td>
+					<td class='step-details'>[{"id":701,"email":"edorkins0","score_1":14.0,"score_2":6.0,"score_3":22.0,"score_4":2.0,"score_5":41.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Meets","grade_4":"Below","grade_5":"Above"},{"id":702,"email":"sturmall1","score_1":9.0,"score_2":14.0,"score_3":28.0,"score_4":38.0,"score_5":28.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets"},{"id":703,"email":"gheavens2","score_1":25.0,"score_2":22.0,"score_3":29.0,"score_4":39.0,"score_5":16.0,"grade_1":"Meets","grade_2":"Meets","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets Below"},{"id":704,"email":"jsalamon3","score_1":45.0,"score_2":19.0,"score_3":36.0,"score_4":5.0,"score_5":40.0,"grade_1":"Above","grade_2":"Meets Below","grade_3":"Meets Above","grade_4":"Below","grade_5":"Meets Above"},{"id":706,"email":"cjarrett5","score_1":9.0,"score_2":16.0,"score_3":1.0,"score_4":29.0,"score_5":49.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Below","grade_4":"Above","grade_5":"Above"},{"id":707,"email":"tschrir6","score_1":33.0,"score_2":9.0,"score_3":18.0,"score_4":12.0,"score_5":24.0,"grade_1":"Meets Above","grade_2":"Below","grade_3":"Meets Below","grade_4":"Meets Below","grade_5":"Meets"},{"id":708,"email":"lchinnery7","score_1":30.0,"score_2":14.0,"score_3":29.0,"score_4":39.0,"score_5":9.0,"grade_1":"Meets","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Meets","grade_5":"Below"},{"id":709,"email":"dwildsmith8","score_1":31.0,"score_2":47.0,"score_3":38.0,"score_4":26.0,"score_5":49.0,"grade_1":"Meets Above","grade_2":"Above","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Above"},{"id":710,"email":"bseary9","score_1":17.0,"score_2":31.0,"score_3":23.0,"score_4":23.0,"score_5":32.0,"grade_1":"Meets Below","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Above","grade_5":"Meets Above"},{"id":711,"email":"ekenwortha","score_1":41.0,"score_2":38.0,"score_3":37.0,"score_4":37.0,"score_5":6.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Below"},{"id":712,"email":"gmuehleb","score_1":14.0,"score_2":11.0,"score_3":33.0,"score_4":33.0,"score_5":3.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Below"},{"id":713,"email":"ehurlec","score_1":20.0,"score_2":31.0,"score_3":24.0,"score_4":44.0,"score_5":1.0,"grade_1":"Meets Below","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets","grade_5":"Below"},{"id":714,"email":"scrosserd","score_1":11.0,"score_2":13.0,"score_3":6.0,"score_4":48.0,"score_5":49.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Below","grade_4":"Above","grade_5":"Above"},{"id":715,"email":"wrawsthornee","score_1":11.0,"score_2":15.0,"score_3":2.0,"score_4":43.0,"score_5":40.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":716,"email":"asowthcotef","score_1":4.0,"score_2":13.0,"score_3":41.0,"score_4":45.0,"score_5":25.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Above","grade_4":"Meets","grade_5":"Meets"},{"id":717,"email":"dfirpog","score_1":29.0,"score_2":43.0,"score_3":50.0,"score_4":46.0,"score_5":3.0,"grade_1":"Meets","grade_2":"Above","grade_3":"Above","grade_4":"Meets","grade_5":"Below"},{"id":718,"email":"lflannerh","score_1":24.0,"score_2":41.0,"score_3":9.0,"score_4":43.0,"score_5":21.0,"grade_1":"Meets","grade_2":"Above","grade_3":"Below","grade_4":"Meets","grade_5":"Meets"},{"id":719,"email":"mparslowi","score_1":3.0,"score_2":50.0,"score_3":33.0,"score_4":22.0,"score_5":29.0,"grade_1":"Below","grade_2":"Above","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Meets"},{"id":720,"email":"salfonsoj","score_1":10.0,"score_2":13.0,"score_3":40.0,"score_4":45.0,"score_5":33.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Meets Above","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":721,"email":"dgeroldik","score_1":42.0,"score_2":42.0,"score_3":39.0,"score_4":36.0,"score_5":37.0,"grade_1":"Above","grade_2":"Above","grade_3":"Meets Above","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":722,"email":"pfonteynel","score_1":9.0,"score_2":44.0,"score_3":1.0,"score_4":25.0,"score_5":49.0,"grade_1":"Below","grade_2":"Above","grade_3":"Below","grade_4":"Below","grade_5":"Above"},{"id":734,"email":"pwallacex","score_1":50.0,"score_2":49.0,"score_3":25.0,"score_4":4.0,"score_5":39.0,"grade_1":"Above","grade_2":"Above","grade_3":"Meets","grade_4":"Below","grade_5":"Meets Above"},{"id":735,"email":"lhiddsleyy","score_1":39.0,"score_2":16.0,"score_3":13.0,"score_4":14.0,"score_5":40.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Meets Below","grade_4":"Meets Below","grade_5":"Meets Above"},{"id":736,"email":"svedikhovz","score_1":40.0,"score_2":34.0,"score_3":15.0,"score_4":6.0,"score_5":26.0,"grade_1":"Meets Above","grade_2":"Meets Above","grade_3":"Meets Below","grade_4":"Below","grade_5":"Meets"},{"id":737,"email":"ndelany10","score_1":48.0,"score_2":11.0,"score_3":47.0,"score_4":12.0,"score_5":47.0,"grade_1":"Above","grade_2":"Meets Below","grade_3":"Above","grade_4":"Meets Below","grade_5":"Above"},{"id":738,"email":"brooper11","score_1":30.0,"score_2":14.0,"score_3":33.0,"score_4":18.0,"score_5":45.0,"grade_1":"Meets","grade_2":"Meets Below","grade_3":"Meets Above","grade_4":"Meets Below","grade_5":"Above"},{"id":739,"email":"tferrie12","score_1":7.0,"score_2":47.0,"score_3":25.0,"score_4":8.0,"score_5":27.0,"grade_1":"Below","grade_2":"Above","grade_3":"Meets","grade_4":"Below","grade_5":"Meets"},{"id":740,"email":"bkelberer13","score_1":10.0,"score_2":16.0,"score_3":49.0,"score_4":33.0,"score_5":5.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Above","grade_4":"Meets","grade_5":"Below"},{"id":741,"email":"gswinford14","score_1":30.0,"score_2":11.0,"score_3":8.0,"score_4":29.0,"score_5":2.0,"grade_1":"Meets","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets","grade_5":"Below"},{"id":742,"email":"gfladgate15","score_1":7.0,"score_2":24.0,"score_3":1.0,"score_4":49.0,"score_5":48.0,"grade_1":"Below","grade_2":"Meets","grade_3":"Below","grade_4":"Above","grade_5":"Above"},{"id":743,"email":"hduffield16","score_1":7.0,"score_2":42.0,"score_3":4.0,"score_4":43.0,"score_5":6.0,"grade_1":"Below","grade_2":"Above","grade_3":"Below","grade_4":"Meets","grade_5":"Below"},{"id":744,"email":"sluckwell17","score_1":47.0,"score_2":18.0,"score_3":16.0,"score_4":30.0,"score_5":49.0,"grade_1":"Above","grade_2":"Meets Below","grade_3":"Meets Below","grade_4":"Above","grade_5":"Above"},{"id":745,"email":"czavattiero18","score_1":26.0,"score_2":28.0,"score_3":37.0,"score_4":47.0,"score_5":29.0,"grade_1":"Meets","grade_2":"Meets","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Meets"},{"id":746,"email":"apreene19","score_1":2.0,"score_2":16.0,"score_3":10.0,"score_4":14.0,"score_5":42.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets Below","grade_5":"Above"},{"id":747,"email":"gvauter1a","score_1":19.0,"score_2":24.0,"score_3":44.0,"score_4":14.0,"score_5":29.0,"grade_1":"Meets Below","grade_2":"Meets","grade_3":"Above","grade_4":"Meets Below","grade_5":"Meets"},{"id":748,"email":"elidgertwood1b","score_1":13.0,"score_2":38.0,"score_3":23.0,"score_4":23.0,"score_5":29.0,"grade_1":"Meets Below","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets"},{"id":749,"email":"bdarrach1c","score_1":47.0,"score_2":26.0,"score_3":6.0,"score_4":9.0,"score_5":31.0,"grade_1":"Above","grade_2":"Meets","grade_3":"Below","grade_4":"Below","grade_5":"Meets Above"},{"id":750,"email":"nloyley1d","score_1":7.0,"score_2":25.0,"score_3":15.0,"score_4":25.0,"score_5":50.0,"grade_1":"Below","grade_2":"Meets","grade_3":"Meets Below","grade_4":"Meets Below","grade_5":"Above"},{"id":751,"email":"aaldie1e","score_1":18.0,"score_2":17.0,"score_3":5.0,"score_4":14.0,"score_5":3.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets Below","grade_5":"Below"},{"id":752,"email":"qsegoe1f","score_1":14.0,"score_2":45.0,"score_3":46.0,"score_4":34.0,"score_5":45.0,"grade_1":"Meets Below","grade_2":"Above","grade_3":"Above","grade_4":"Meets Below","grade_5":"Above"},{"id":753,"email":"sstrettell1g","score_1":22.0,"score_2":8.0,"score_3":30.0,"score_4":19.0,"score_5":48.0,"grade_1":"Meets","grade_2":"Below","grade_3":"Meets","grade_4":"Meets Below","grade_5":"Above"},{"id":754,"email":"cantley1h","score_1":41.0,"score_2":3.0,"score_3":30.0,"score_4":15.0,"score_5":13.0,"grade_1":"Above","grade_2":"Below","grade_3":"Meets","grade_4":"Meets Below","grade_5":"Meets Below"},{"id":755,"email":"jtrembath1i","score_1":43.0,"score_2":41.0,"score_3":19.0,"score_4":5.0,"score_5":13.0,"grade_1":"Above","grade_2":"Above","grade_3":"Meets Below","grade_4":"Below","grade_5":"Meets Below"},{"id":756,"email":"dlorkin1j","score_1":30.0,"score_2":6.0,"score_3":3.0,"score_4":5.0,"score_5":42.0,"grade_1":"Meets","grade_2":"Below","grade_3":"Below","grade_4":"Below","grade_5":"Above"},{"id":757,"email":"rstotherfield1k","score_1":19.0,"score_2":18.0,"score_3":47.0,"score_4":47.0,"score_5":11.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Above","grade_4":"Meets","grade_5":"Meets Below"},{"id":758,"email":"kkilvington1l","score_1":18.0,"score_2":2.0,"score_3":49.0,"score_4":12.0,"score_5":49.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Above","grade_4":"Meets Below","grade_5":"Above"},{"id":759,"email":"jbehnecke1m","score_1":46.0,"score_2":27.0,"score_3":48.0,"score_4":30.0,"score_5":45.0,"grade_1":"Above","grade_2":"Meets","grade_3":"Above","grade_4":"Meets Above","grade_5":"Above"},{"id":760,"email":"ideeley1n","score_1":46.0,"score_2":17.0,"score_3":28.0,"score_4":23.0,"score_5":11.0,"grade_1":"Above","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets Below"},{"id":761,"email":"rkoenraad1o","score_1":32.0,"score_2":11.0,"score_3":26.0,"score_4":43.0,"score_5":48.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Above","grade_5":"Above"},{"id":762,"email":"mjeanenet1p","score_1":49.0,"score_2":26.0,"score_3":49.0,"score_4":30.0,"score_5":44.0,"grade_1":"Above","grade_2":"Meets","grade_3":"Above","grade_4":"Meets Above","grade_5":"Above"},{"id":763,"email":"bpenvarden1q","score_1":50.0,"score_2":16.0,"score_3":21.0,"score_4":37.0,"score_5":22.0,"grade_1":"Above","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets"},{"id":764,"email":"madriaan1r","score_1":12.0,"score_2":10.0,"score_3":19.0,"score_4":41.0,"score_5":19.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Meets Below"},{"id":765,"email":"jhegel1s","score_1":2.0,"score_2":32.0,"score_3":29.0,"score_4":28.0,"score_5":47.0,"grade_1":"Below","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets Below","grade_5":"Above"},{"id":766,"email":"hcanham1t","score_1":33.0,"score_2":37.0,"score_3":21.0,"score_4":21.0,"score_5":22.0,"grade_1":"Meets Above","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets"},{"id":767,"email":"mstreeting1u","score_1":39.0,"score_2":12.0,"score_3":4.0,"score_4":21.0,"score_5":15.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets","grade_5":"Meets Below"},{"id":768,"email":"vstanaway1v","score_1":50.0,"score_2":31.0,"score_3":28.0,"score_4":44.0,"score_5":12.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets Below"},{"id":769,"email":"fcanacott1w","score_1":10.0,"score_2":1.0,"score_3":15.0,"score_4":25.0,"score_5":13.0,"grade_1":"Below","grade_2":"Below","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Meets Below"},{"id":770,"email":"ewillgoss1x","score_1":4.0,"score_2":11.0,"score_3":22.0,"score_4":50.0,"score_5":28.0,"grade_1":"Below","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Meets","grade_5":"Meets"},{"id":771,"email":"tmccorkindale1y","score_1":48.0,"score_2":48.0,"score_3":9.0,"score_4":17.0,"score_5":15.0,"grade_1":"Above","grade_2":"Above","grade_3":"Below","grade_4":"Meets Below","grade_5":"Meets Below"},{"id":772,"email":"hyellowlee1z","score_1":35.0,"score_2":12.0,"score_3":32.0,"score_4":40.0,"score_5":4.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Below"},{"id":773,"email":"ctopaz20","score_1":37.0,"score_2":20.0,"score_3":16.0,"score_4":21.0,"score_5":6.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Below"},{"id":774,"email":"sharwell21","score_1":14.0,"score_2":14.0,"score_3":25.0,"score_4":2.0,"score_5":18.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Meets","grade_4":"Below","grade_5":"Meets Below"},{"id":775,"email":"mbenesevich22","score_1":47.0,"score_2":37.0,"score_3":22.0,"score_4":20.0,"score_5":25.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Meets","grade_4":"Meets Below","grade_5":"Meets"},{"id":776,"email":"mchomicz23","score_1":14.0,"score_2":39.0,"score_3":48.0,"score_4":42.0,"score_5":33.0,"grade_1":"Meets Below","grade_2":"Meets Above","grade_3":"Above","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":777,"email":"rde24","score_1":20.0,"score_2":17.0,"score_3":13.0,"score_4":40.0,"score_5":6.0,"grade_1":"Meets Below","grade_2":"Meets Below","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Below"},{"id":778,"email":"viggalden25","score_1":49.0,"score_2":31.0,"score_3":1.0,"score_4":2.0,"score_5":39.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Below","grade_4":"Below","grade_5":"Meets Above"},{"id":779,"email":"tbineham26","score_1":49.0,"score_2":27.0,"score_3":18.0,"score_4":39.0,"score_5":3.0,"grade_1":"Above","grade_2":"Meets","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Below"},{"id":780,"email":"rmurrish27","score_1":2.0,"score_2":5.0,"score_3":38.0,"score_4":2.0,"score_5":50.0,"grade_1":"Below","grade_2":"Below","grade_3":"Meets Above","grade_4":"Below","grade_5":"Above"},{"id":781,"email":"lcabral28","score_1":39.0,"score_2":20.0,"score_3":5.0,"score_4":47.0,"score_5":37.0,"grade_1":"Meets Above","grade_2":"Meets Below","grade_3":"Below","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":782,"email":"dreubel29","score_1":34.0,"score_2":41.0,"score_3":28.0,"score_4":47.0,"score_5":31.0,"grade_1":"Meets Above","grade_2":"Above","grade_3":"Meets","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":783,"email":"rleech2a","score_1":11.0,"score_2":23.0,"score_3":10.0,"score_4":43.0,"score_5":36.0,"grade_1":"Meets Below","grade_2":"Meets","grade_3":"Below","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":784,"email":"sgarforth2b","score_1":3.0,"score_2":44.0,"score_3":9.0,"score_4":46.0,"score_5":49.0,"grade_1":"Below","grade_2":"Above","grade_3":"Below","grade_4":"Above","grade_5":"Above"},{"id":785,"email":"wcare2c","score_1":19.0,"score_2":30.0,"score_3":41.0,"score_4":18.0,"score_5":7.0,"grade_1":"Meets Below","grade_2":"Meets","grade_3":"Above","grade_4":"Meets Below","grade_5":"Below"},{"id":786,"email":"rmaclean2d","score_1":33.0,"score_2":31.0,"score_3":15.0,"score_4":36.0,"score_5":4.0,"grade_1":"Meets Above","grade_2":"Meets Above","grade_3":"Meets Below","grade_4":"Meets","grade_5":"Below"},{"id":787,"email":"braffan2e","score_1":15.0,"score_2":8.0,"score_3":38.0,"score_4":36.0,"score_5":37.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Meets Above","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":788,"email":"bstokell2f","score_1":22.0,"score_2":35.0,"score_3":7.0,"score_4":39.0,"score_5":20.0,"grade_1":"Meets","grade_2":"Meets Above","grade_3":"Below","grade_4":"Meets","grade_5":"Meets Below"},{"id":789,"email":"dbellison2g","score_1":4.0,"score_2":43.0,"score_3":47.0,"score_4":33.0,"score_5":44.0,"grade_1":"Below","grade_2":"Above","grade_3":"Above","grade_4":"Below","grade_5":"Above"},{"id":790,"email":"rbamblett2h","score_1":7.0,"score_2":8.0,"score_3":1.0,"score_4":22.0,"score_5":36.0,"grade_1":"Below","grade_2":"Below","grade_3":"Below","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":791,"email":"pleney2i","score_1":13.0,"score_2":30.0,"score_3":45.0,"score_4":21.0,"score_5":5.0,"grade_1":"Meets Below","grade_2":"Meets","grade_3":"Above","grade_4":"Meets","grade_5":"Below"},{"id":792,"email":"kulyat2j","score_1":11.0,"score_2":9.0,"score_3":2.0,"score_4":21.0,"score_5":47.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Below","grade_4":"Meets Above","grade_5":"Above"},{"id":793,"email":"sghidoli2k","score_1":50.0,"score_2":31.0,"score_3":50.0,"score_4":31.0,"score_5":44.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Above","grade_4":"Meets Below","grade_5":"Above"},{"id":794,"email":"kdayes2l","score_1":48.0,"score_2":33.0,"score_3":4.0,"score_4":27.0,"score_5":45.0,"grade_1":"Above","grade_2":"Meets Above","grade_3":"Below","grade_4":"Meets Above","grade_5":"Above"},{"id":795,"email":"mtrudgion2m","score_1":42.0,"score_2":45.0,"score_3":36.0,"score_4":13.0,"score_5":28.0,"grade_1":"Above","grade_2":"Above","grade_3":"Meets Above","grade_4":"Meets Below","grade_5":"Meets"},{"id":796,"email":"hraittie2n","score_1":19.0,"score_2":2.0,"score_3":1.0,"score_4":14.0,"score_5":6.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Below","grade_4":"Meets Below","grade_5":"Below"},{"id":797,"email":"sannetts2o","score_1":22.0,"score_2":43.0,"score_3":22.0,"score_4":28.0,"score_5":31.0,"grade_1":"Meets","grade_2":"Above","grade_3":"Meets","grade_4":"Meets Below","grade_5":"Meets Above"},{"id":798,"email":"avince2p","score_1":23.0,"score_2":48.0,"score_3":46.0,"score_4":11.0,"score_5":17.0,"grade_1":"Meets","grade_2":"Above","grade_3":"Above","grade_4":"Meets Below","grade_5":"Meets Below"},{"id":799,"email":"pjanc2q","score_1":7.0,"score_2":45.0,"score_3":13.0,"score_4":14.0,"score_5":32.0,"grade_1":"Below","grade_2":"Above","grade_3":"Meets Below","grade_4":"Meets Below","grade_5":"Meets Above"},{"id":800,"email":"gpoetz2r","score_1":8.0,"score_2":43.0,"score_3":5.0,"score_4":9.0,"score_5":33.0,"grade_1":"Below","grade_2":"Above","grade_3":"Below","grade_4":"Below","grade_5":"Meets Above"},{"id":705,"email":"rdawidowsky4","score_1":47.0,"score_2":46.0,"score_3":15.0,"score_4":49.0,"score_5":43.0,"grade_1":"Above","grade_2":"Above","grade_3":"Meets Below","grade_4":"Above","grade_5":"Above"},{"id":723,"email":"fhindmorem","score_1":26.0,"score_2":1.0,"score_3":28.0,"score_4":9.0,"score_5":12.0,"grade_1":"Meets","grade_2":"Below","grade_3":"Meets","grade_4":"Below","grade_5":"Meets Below"},{"id":724,"email":"dhaberchamn","score_1":31.0,"score_2":21.0,"score_3":6.0,"score_4":27.0,"score_5":37.0,"grade_1":"Meets Above","grade_2":"Meets","grade_3":"Below","grade_4":"Above","grade_5":"Meets Above"},{"id":725,"email":"dosharryo","score_1":39.0,"score_2":4.0,"score_3":3.0,"score_4":7.0,"score_5":11.0,"grade_1":"Meets Above","grade_2":"Below","grade_3":"Below","grade_4":"Below","grade_5":"Meets Below"},{"id":726,"email":"tfaasp","score_1":34.0,"score_2":9.0,"score_3":38.0,"score_4":49.0,"score_5":13.0,"grade_1":"Meets Above","grade_2":"Below","grade_3":"Meets Above","grade_4":"Meets","grade_5":"Meets Below"},{"id":727,"email":"cmapstoneq","score_1":28.0,"score_2":27.0,"score_3":50.0,"score_4":48.0,"score_5":12.0,"grade_1":"Meets","grade_2":"Meets","grade_3":"Above","grade_4":"Meets","grade_5":"Meets Below"},{"id":728,"email":"bpyecroftr","score_1":43.0,"score_2":27.0,"score_3":13.0,"score_4":9.0,"score_5":19.0,"grade_1":"Above","grade_2":"Meets","grade_3":"Meets Below","grade_4":"Below","grade_5":"Meets Below"},{"id":729,"email":"miffes","score_1":25.0,"score_2":11.0,"score_3":44.0,"score_4":25.0,"score_5":8.0,"grade_1":"Meets","grade_2":"Meets Below","grade_3":"Above","grade_4":"Meets","grade_5":"Below"},{"id":730,"email":"tisont","score_1":44.0,"score_2":45.0,"score_3":4.0,"score_4":16.0,"score_5":13.0,"grade_1":"Above","grade_2":"Above","grade_3":"Below","grade_4":"Meets Below","grade_5":"Meets Below"},{"id":731,"email":"ceulu","score_1":41.0,"score_2":7.0,"score_3":30.0,"score_4":45.0,"score_5":35.0,"grade_1":"Above","grade_2":"Below","grade_3":"Meets","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":732,"email":"gipsleyv","score_1":1.0,"score_2":38.0,"score_3":45.0,"score_4":50.0,"score_5":37.0,"grade_1":"Below","grade_2":"Meets Above","grade_3":"Above","grade_4":"Meets Above","grade_5":"Meets Above"},{"id":733,"email":"sbakewellw","score_1":13.0,"score_2":26.0,"score_3":31.0,"score_4":19.0,"score_5":46.0,"grade_1":"Meets Below","grade_2":"Meets","grade_3":"Meets Above","grade_4":"Meets Below","grade_5":"Above"}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:46 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>18. Get result of a particular linker by email.</span>
+						<span class='test-time'>Apr 28, 2022 12:24:46 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:46 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:47 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+975ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:46 AM</td>
+					<td class='step-details'>Get result of a particular linker by email data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/track-result/edorkins0</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:47 AM</td>
+					<td class='step-details'>{"id":701,"email":"edorkins0","score_1":14.0,"score_2":6.0,"score_3":22.0,"score_4":2.0,"score_5":41.0,"grade_1":"Meets Below","grade_2":"Below","grade_3":"Meets","grade_4":"Below","grade_5":"Above"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:47 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>19. Get all the tracks allocated to linkers.</span>
+						<span class='test-time'>Apr 28, 2022 12:24:47 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:47 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+130ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:47 AM</td>
+					<td class='step-details'>Get all the tracks allocated to linkers. data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/track-allocated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:48 AM</td>
+					<td class='step-details'>[{"id":1,"email":"rdawidowsky4","name":"Ricoriki Dawidowsky","assigned_track":"Mobile Development"},{"id":2,"email":"dgeroldik","name":"Dodie Geroldi","assigned_track":"Data Engineering"},{"id":3,"email":"jbehnecke1m","name":"Jasmine Behnecke","assigned_track":"Data Engineering"},{"id":4,"email":"mjeanenet1p","name":"Marcile Jeanenet","assigned_track":"Data Engineering"},{"id":5,"email":"sghidoli2k","name":"Scotti Ghidoli","assigned_track":"Advance Angular"},{"id":6,"email":"dwildsmith8","name":"Dolley Wildsmith","assigned_track":"Mobile Development"},{"id":7,"email":"dreubel29","name":"Donaugh Reubel","assigned_track":"Data Engineering"},{"id":8,"email":"qsegoe1f","name":"Quent Segoe","assigned_track":"Data Engineering"},{"id":9,"email":"mchomicz23","name":"Moritz Chomicz","assigned_track":"Mobile Development"},{"id":10,"email":"ndelany10","name":"Noak Delany","assigned_track":"Mobile Development"},{"id":11,"email":"mtrudgion2m","name":"Malia Trudgion","assigned_track":"Mobile Development"},{"id":12,"email":"sluckwell17","name":"Shoshana Luckwell","assigned_track":"IOT"},{"id":13,"email":"rkoenraad1o","name":"Regine Koenraad","assigned_track":"IOT"},{"id":14,"email":"kdayes2l","name":"Kissee Dayes","assigned_track":"IOT"},{"id":15,"email":"bseary9","name":"Barnebas Seary","assigned_track":"Mobile Development"},{"id":16,"email":"pwallacex","name":"Peggie Wallace","assigned_track":"IOT"},{"id":17,"email":"gipsleyv","name":"Gregoor Ipsley","assigned_track":"Advance Angular"},{"id":18,"email":"dfirpog","name":"Dan Firpo","assigned_track":"IOT"},{"id":19,"email":"dbellison2g","name":"Darren Bellison","assigned_track":"IOT"},{"id":20,"email":"vstanaway1v","name":"Vita Stanaway","assigned_track":"IOT"},{"id":21,"email":"ekenwortha","name":"Emlyn Kenworth","assigned_track":"IOT"},{"id":22,"email":"ceulu","name":"Corrianne Eul","assigned_track":"Advance Angular"},{"id":23,"email":"mbenesevich22","name":"Marsiella Benesevich","assigned_track":"Advance Angular"},{"id":24,"email":"sgarforth2b","name":"Shepherd Garforth","assigned_track":"Data Engineering"},{"id":25,"email":"sannetts2o","name":"Salaidh Annetts","assigned_track":"Data Engineering"},{"id":26,"email":"avince2p","name":"Alejandra Vince","assigned_track":"Advance Angular"},{"id":27,"email":"hcanham1t","name":"Harrison Canham","assigned_track":"IOT"},{"id":28,"email":"dhaberchamn","name":"Damaris Habercham","assigned_track":"Advance Angular"},{"id":29,"email":"brooper11","name":"Briano Rooper","assigned_track":"Advance Angular"},{"id":30,"email":"sbakewellw","name":"Sauveur Bakewell","assigned_track":"Advance Angular"},{"id":31,"email":"mparslowi","name":"Micheal Parslow","assigned_track":"Mobile Development"},{"id":32,"email":"cmapstoneq","name":"Cole Mapstone","assigned_track":"Data Engineering"},{"id":33,"email":"jsalamon3","name":"Judi Salamon","assigned_track":"Mobile Development"},{"id":34,"email":"czavattiero18","name":"Christin Zavattiero","assigned_track":"Advance Angular"},{"id":35,"email":"bpenvarden1q","name":"Brenn Penvarden","assigned_track":"Advance Angular"},{"id":36,"email":"kkilvington1l","name":"Karol Kilvington","assigned_track":"Data Engineering"},{"id":37,"email":"jtrembath1i","name":"Jennee Trembath","assigned_track":"Data Engineering"},{"id":38,"email":"tisont","name":"Tatiania Ison","assigned_track":"IOT"},{"id":39,"email":"viggalden25","name":"Valenka Iggalden","assigned_track":"Data Engineering"},{"id":40,"email":"ideeley1n","name":"Isabelita Deeley","assigned_track":"Data Engineering"},{"id":41,"email":"scrosserd","name":"Sheelagh Crosser","assigned_track":"Advance Angular"},{"id":42,"email":"gfladgate15","name":"Gannon Fladgate","assigned_track":"Advance Angular"},{"id":43,"email":"elidgertwood1b","name":"Everard Lidgertwood","assigned_track":"Mobile Development"},{"id":44,"email":"gvauter1a","name":"Ginevra Vauter","assigned_track":"Advance Angular"},{"id":45,"email":"braffan2e","name":"Bearnard Raffan","assigned_track":"IOT"},{"id":46,"email":"tmccorkindale1y","name":"Thorny McCorkindale","assigned_track":"Advance Angular"},{"id":47,"email":"jhegel1s","name":"Joellen Hegel","assigned_track":"Advance Angular"},{"id":48,"email":"lflannerh","name":"Leelah Flanner","assigned_track":"IOT"},{"id":49,"email":"salfonsoj","name":"Shina Alfonso","assigned_track":"Data Engineering"},{"id":50,"email":"lcabral28","name":"Lenore Cabral","assigned_track":"Data Engineering"},{"id":51,"email":"lhiddsleyy","name":"Linzy Hiddsley","assigned_track":"Data Engineering"},{"id":52,"email":"cjarrett5","name":"Catlaina Jarrett","assigned_track":"Advance Angular"},{"id":53,"email":"pjanc2q","name":"Polly Janc","assigned_track":"Data Engineering"},{"id":54,"email":"miffes","name":"Molli Iffe","assigned_track":"Mobile Development"},{"id":55,"email":"pleney2i","name":"Piotr Leney","assigned_track":"IOT"},{"id":56,"email":"rmaclean2d","name":"Rivkah Maclean","assigned_track":"Data Engineering"},{"id":57,"email":"bdarrach1c","name":"Bellanca Darrach","assigned_track":"Data Engineering"},{"id":58,"email":"svedikhovz","name":"Sunny Vedikhov","assigned_track":"Advance Angular"},{"id":59,"email":"tfaasp","name":"Tiffani Faas","assigned_track":"IOT"},{"id":60,"email":"rleech2a","name":"Reinaldos Leech","assigned_track":"Data Engineering"},{"id":61,"email":"sstrettell1g","name":"Saidee Strettell","assigned_track":"Mobile Development"},{"id":62,"email":"asowthcotef","name":"Augy Sowthcote","assigned_track":"Mobile Development"},{"id":63,"email":"gheavens2","name":"Gannon Heavens","assigned_track":"Advance Angular"},{"id":64,"email":"tbineham26","name":"Tiphany Bineham","assigned_track":"Mobile Development"},{"id":65,"email":"rstotherfield1k","name":"Ritchie Stotherfield","assigned_track":"Data Engineering"},{"id":66,"email":"hyellowlee1z","name":"Hadleigh Yellowlee","assigned_track":"Mobile Development"},{"id":67,"email":"tferrie12","name":"Tiffi Ferrie","assigned_track":"IOT"},{"id":68,"email":"kulyat2j","name":"Kirsten Ulyat","assigned_track":"Test Track"},{"id":69,"email":"cantley1h","name":"Camille Antley","assigned_track":"Mobile Development"},{"id":70,"email":"bpyecroftr","name":"Bryn Pyecroft","assigned_track":"IOT"},{"id":71,"email":"wrawsthornee","name":"Wenonah Rawsthorne","assigned_track":"IOT"},{"id":72,"email":"wcare2c","name":"Wilfrid Care","assigned_track":"Data Engineering"},{"id":73,"email":"ehurlec","name":"Esra Hurle","assigned_track":"Advance Angular"},{"id":74,"email":"nloyley1d","name":"Norris Loyley","assigned_track":"IOT"},{"id":75,"email":"bstokell2f","name":"Babara Stokell","assigned_track":"Data Engineering"},{"id":76,"email":"pfonteynel","name":"Piggy Fonteyne","assigned_track":"Advance Angular"},{"id":77,"email":"rmurrish27","name":"Rebbecca Murrish","assigned_track":"Mobile Development"},{"id":78,"email":"edorkins0","name":"Ebenezer Dorkins","assigned_track":"Mobile Development"},{"id":79,"email":"mstreeting1u","name":"Madalena Streeting","assigned_track":"Data Engineering"},{"id":80,"email":"gmuehleb","name":"Glynis Muehle","assigned_track":"Mobile Development"},{"id":81,"email":"tschrir6","name":"Taddeusz Schrir","assigned_track":"IOT"},{"id":82,"email":"bkelberer13","name":"Binnie Kelberer","assigned_track":"Mobile Development"},{"id":83,"email":"gpoetz2r","name":"Griffith Poetz","assigned_track":"Data Engineering"},{"id":84,"email":"ewillgoss1x","name":"Ekaterina Willgoss","assigned_track":"Mobile Development"},{"id":85,"email":"sturmall1","name":"Shela Turmall","assigned_track":"IOT"},{"id":86,"email":"lchinnery7","name":"Linette Chinnery","assigned_track":"Mobile Development"},{"id":87,"email":"ctopaz20","name":"Carlie Topaz","assigned_track":"Mobile Development"},{"id":88,"email":"hduffield16","name":"Howey Duffield","assigned_track":"Test Track"},{"id":89,"email":"dlorkin1j","name":"Dwight Lorkin","assigned_track":"Data Engineering"},{"id":90,"email":"apreene19","name":"Ash Preene","assigned_track":"Mobile Development"},{"id":91,"email":"rbamblett2h","name":"Ronnie Bamblett","assigned_track":"Mobile Development"},{"id":92,"email":"fhindmorem","name":"Florina Hindmore","assigned_track":"Data Engineering"},{"id":93,"email":"sharwell21","name":"Stearn Harwell","assigned_track":"New Track"},{"id":94,"email":"madriaan1r","name":"Maiga Adriaan","assigned_track":"Test Track"},{"id":95,"email":"gswinford14","name":"Gilbert Swinford","assigned_track":"Data Engineering"},{"id":96,"email":"rde24","name":"Rriocard De Fries","assigned_track":"Data Engineering"},{"id":97,"email":"fcanacott1w","name":"Faunie Canacott","assigned_track":"Lower Track"},{"id":98,"email":"dosharryo","name":"Damara O'Sharry","assigned_track":"Data Engineering"},{"id":99,"email":"aaldie1e","name":"Arni Aldie","assigned_track":"Lower Track"},{"id":100,"email":"hraittie2n","name":"Harman Raittie","assigned_track":"Lower Track"}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:48 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>20. Get track allocated to a particular linker through email.</span>
+						<span class='test-time'>Apr 28, 2022 12:24:48 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:48 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:50 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+40ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:48 AM</td>
+					<td class='step-details'>Get track allocated to a particular linker through email data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/track-allocated/email/rdawidowsky4</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:50 AM</td>
+					<td class='step-details'>[{"id":1,"email":"rdawidowsky4","name":"Ricoriki Dawidowsky","assigned_track":"Mobile Development"}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:50 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>21. Get all the linkers in a particular track.</span>
+						<span class='test-time'>Apr 28, 2022 12:24:50 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:50 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:51 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+25ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:50 AM</td>
+					<td class='step-details'>Get all linkers in particular track data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/track-allocated/track/Advance%20Angular</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>[{"id":5,"email":"sghidoli2k","name":"Scotti Ghidoli","assigned_track":"Advance Angular"},{"id":17,"email":"gipsleyv","name":"Gregoor Ipsley","assigned_track":"Advance Angular"},{"id":22,"email":"ceulu","name":"Corrianne Eul","assigned_track":"Advance Angular"},{"id":23,"email":"mbenesevich22","name":"Marsiella Benesevich","assigned_track":"Advance Angular"},{"id":26,"email":"avince2p","name":"Alejandra Vince","assigned_track":"Advance Angular"},{"id":28,"email":"dhaberchamn","name":"Damaris Habercham","assigned_track":"Advance Angular"},{"id":29,"email":"brooper11","name":"Briano Rooper","assigned_track":"Advance Angular"},{"id":30,"email":"sbakewellw","name":"Sauveur Bakewell","assigned_track":"Advance Angular"},{"id":34,"email":"czavattiero18","name":"Christin Zavattiero","assigned_track":"Advance Angular"},{"id":35,"email":"bpenvarden1q","name":"Brenn Penvarden","assigned_track":"Advance Angular"},{"id":41,"email":"scrosserd","name":"Sheelagh Crosser","assigned_track":"Advance Angular"},{"id":42,"email":"gfladgate15","name":"Gannon Fladgate","assigned_track":"Advance Angular"},{"id":44,"email":"gvauter1a","name":"Ginevra Vauter","assigned_track":"Advance Angular"},{"id":46,"email":"tmccorkindale1y","name":"Thorny McCorkindale","assigned_track":"Advance Angular"},{"id":47,"email":"jhegel1s","name":"Joellen Hegel","assigned_track":"Advance Angular"},{"id":52,"email":"cjarrett5","name":"Catlaina Jarrett","assigned_track":"Advance Angular"},{"id":58,"email":"svedikhovz","name":"Sunny Vedikhov","assigned_track":"Advance Angular"},{"id":63,"email":"gheavens2","name":"Gannon Heavens","assigned_track":"Advance Angular"},{"id":73,"email":"ehurlec","name":"Esra Hurle","assigned_track":"Advance Angular"},{"id":76,"email":"pfonteynel","name":"Piggy Fonteyne","assigned_track":"Advance Angular"}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>22. Post parallel track preference</span>
+						<span class='test-time'>Apr 28, 2022 12:24:51 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:51 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:51 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+402ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>Post parallel track preference</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>{"assigned_track":"Lower Track","name":"Harman Raittie","id":100,"email":"hraittie2n"}</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>Status Code: 302</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>Request Failed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>23. Post section lead remark</span>
+						<span class='test-time'>Apr 28, 2022 12:24:51 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:51 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+337ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>Post section lead remark</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>12:24:51 AM</td>
+					<td class='step-details'>{"assigned_track":"Lower Track","name":"Harman Raittie","id":100,"email":"hraittie2n"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>Post section lead remark registered</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>24. Post track result</span>
+						<span class='test-time'>Apr 28, 2022 12:24:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:52 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+337ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>Post track result</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>{"score_5":46,"score_2":26,"score_1":13,"grade_1":"Meets Below","score_4":19,"grade_2":"Meets","id":733,"score_3":31,"grade_3":"Meets Above","grade_4":"Meets Below","grade_5":"Above","email":"sbakewellw"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>Post track result registered</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>25. Post parallel track details</span>
+						<span class='test-time'>Apr 28, 2022 12:24:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:52 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:53 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+442ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>Post parallel track details</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>12:24:52 AM</td>
+					<td class='step-details'>{"assigned_track":"Lower Track","name":"Harman Raittie","id":100,"email":"hraittie2n"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:53 AM</td>
+					<td class='step-details'>Post parallel track details registered</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>26. Track allocated on basis of ratings</span>
+						<span class='test-time'>Apr 28, 2022 12:24:53 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:53 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:54 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+331ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:53 AM</td>
+					<td class='step-details'>Track allocated on basis of ratings data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/perform-track-analysis-rate-no</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:54 AM</td>
+					<td class='step-details'>{"message":"Done"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:54 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>27. Track allocated on basis of ratings and effort</span>
+						<span class='test-time'>Apr 28, 2022 12:24:54 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:54 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:55 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+226ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:54 AM</td>
+					<td class='step-details'>Track allocated on basis of rating and effort data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/perform-track-analysis-rate-yes</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:55 AM</td>
+					<td class='step-details'>{"message":"Done"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:55 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>29. Track allocated on basis of only ratings and effort</span>
+						<span class='test-time'>Apr 28, 2022 12:24:55 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:55 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:58 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+353ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:55 AM</td>
+					<td class='step-details'>Track allocated on basis of only ratings and effort data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/perform-track-analysis-only-rate-yes</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:58 AM</td>
+					<td class='step-details'>{"message":"Done"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:58 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>28. Track allocated on basis of only ratings</span>
+						<span class='test-time'>Apr 28, 2022 12:24:58 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Apr 28, 2022 12:24:58 AM</span>
+	<span class='label end-time'>Apr 28, 2022 12:24:59 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+337ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:58 AM</td>
+					<td class='step-details'>Track allocated on basis of only ratings data from , http://huallocation-backend-urtjok3rza-wl.a.run.app/HUAllocation/perform-track-analysis-only-rate-no</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>12:24:59 AM</td>
+					<td class='step-details'>{"message":"Done"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>12:24:59 AM</td>
+					<td class='step-details'>Successfully fetched JSON</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>15</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>66</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Apr 28, 2022 12:24:43 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Apr 28, 2022 12:24:59 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 15s+916ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 13,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				
+				passChild: 26,
+				failChild: 2,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 38,
+				exceptionsChild: 6,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
