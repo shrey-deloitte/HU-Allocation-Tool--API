@@ -19,7 +19,7 @@ public class Listener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         log.info(result.getMethod().getMethodName() + " success");
-        test = extentController.extent.createTest(result.getMethod().getMethodName(), "Test Description");
+        //test = extentController.extent.createTest(result.getMethod().getMethodName(), "Test Description");
         test.log(Status.PASS, result.getMethod().getMethodName() + " success");
         ITestListener.super.onTestSuccess(result);
     }
@@ -27,7 +27,7 @@ public class Listener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         test.fail(result.getMethod().getMethodName() + " test Fail");
-        test = extentController.extent.createTest(result.getMethod().getMethodName(), "Test Description");
+        //test = extentController.extent.createTest(result.getMethod().getMethodName(), "Test Description");
         test.fail( result.getMethod().getMethodName() + " Failed");
 
         ITestListener.super.onTestFailure(result);
