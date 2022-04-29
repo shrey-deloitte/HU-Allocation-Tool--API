@@ -47,9 +47,10 @@ public class UploadFiles {
     }
 
 
+
     public void postDetailsOfAllProducts() {
 
-        File productDetailfile = new File("C:\\Users\\shubhamkumar32\\Downloads\\productdetail (1).csv");
+        File productDetailfile = new File("src/test/java/resources/productdetail (1).csv");
 
         Response response =
                 given()
